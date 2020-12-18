@@ -1,0 +1,41 @@
+{
+  "name": "create-nts-app",
+  "version": "0.0.1",
+  "description": "Create Node TypeScript (nts) apps with no build configuration.",
+  "author": "djdmbrwsk@gmail.com",
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "typescript",
+    "app",
+    "project",
+    "boilerplate",
+    "starter",
+    "template"
+  ],
+  "bin": {
+    "create-nts-app": "build/bin/create-nts-app.js"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "nts-scripts build",
+    "clean": "nts-scripts clean && rimraf ./test-app",
+    "format": "nts-scripts format",
+    "lint": "nts-scripts lint",
+    "start": "npm run clean && npm run build && node build/bin/create-nts-app test-app --template file:../nts-template",
+    "test": "nts-scripts test"
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.2",
+    "@types/fs-extra": "^9.0.6",
+    "@types/yargs": "^15.0.12",
+    "nts-scripts": "^0.0.6"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.3",
+    "fs-extra": "^9.0.1",
+    "yargs": "^13.3.2"
+  }
+}
