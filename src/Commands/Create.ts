@@ -48,6 +48,11 @@ class Create implements CommandModule<CommonArgs, CreateArgs> {
         );
       }
       fs.copySync(localTemplateDir, tempDir);
+    } else if (template.endsWith('.git')) {
+      spawn.sync('git', ['clone', template, tempDir], {
+        stdio: 'inherit',
+        cwd: appDir,
+      });
     } else {
       // TODO: Other template types
       throw new Error(`Invalid template source '${template}'`);
