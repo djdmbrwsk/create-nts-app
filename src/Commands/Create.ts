@@ -112,13 +112,13 @@ class Create implements CommandModule<CommonArgs, CreateArgs> {
     // Install dependencies (and implicitly create a package-lock.json)
     spawn.sync('npm', ['i'], {
       stdio: 'inherit',
-      cwd: templateDir,
+      cwd: appDir,
     });
 
     // Install latest version of nts-scripts
     spawn.sync('npm', ['i', '-D', 'nts-scripts'], {
       stdio: 'inherit',
-      cwd: templateDir,
+      cwd: appDir,
     });
 
     // Copy template files
@@ -135,19 +135,19 @@ class Create implements CommandModule<CommonArgs, CreateArgs> {
 
     // Git init/commit
     spawn.sync('git', ['init'], {
-      stdio: 'ignore',
-      cwd: templateDir,
+      stdio: 'inherit',
+      cwd: appDir,
     });
     spawn.sync('git', ['add', '.'], {
-      stdio: 'ignore',
-      cwd: templateDir,
+      stdio: 'inherit',
+      cwd: appDir,
     });
     spawn.sync(
       'git',
       ['commit', '-m', 'Initialize project using create-nts-app'],
       {
-        stdio: 'ignore',
-        cwd: templateDir,
+        stdio: 'inherit',
+        cwd: appDir,
       },
     );
   };
