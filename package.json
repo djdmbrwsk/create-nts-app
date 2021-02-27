@@ -21,10 +21,12 @@
   ],
   "scripts": {
     "build": "nts-scripts build",
-    "clean": "nts-scripts clean && rimraf ./test-app",
+    "clean": "nts-scripts clean",
     "format": "nts-scripts format",
     "lint": "nts-scripts lint",
-    "start": "npm run clean && npm run build && node build/bin/create-nts-app test-app --template file:../nts-template",
+    "start": "npm run start:local",
+    "start:local": "npm run clean && npm run build && cd .. && rimraf test-app && node create-nts-app/build/bin/create-nts-app test-app --template file:nts-template",
+    "start:git": "npm run clean && npm run build && cd .. && rimraf test-app && node create-nts-app/build/bin/create-nts-app test-app --template git@github.com:reduxjs/cra-template-redux.git",
     "test": "nts-scripts test"
   },
   "devDependencies": {
