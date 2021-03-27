@@ -3,6 +3,7 @@ import path from 'path';
 
 import spawn from 'cross-spawn';
 import fs from 'fs-extra';
+import fetch from 'node-fetch';
 import { Arguments, Argv, CommandModule } from 'yargs';
 
 import { CommonArgs } from '../bin/create-nts-app';
@@ -40,6 +41,7 @@ class Create implements CommandModule<CommonArgs, CreateArgs> {
 
     // Resolve template
     const tempDir = path.join(appDir, 'temp');
+    fs.mkdirSync(tempDir);
     if (template.startsWith('file:')) {
       const localTemplateDir = path.resolve(template.substr(5));
       if (!fs.existsSync(localTemplateDir)) {
@@ -49,13 +51,38 @@ class Create implements CommandModule<CommonArgs, CreateArgs> {
       }
       fs.copySync(localTemplateDir, tempDir);
     } else if (template.endsWith('.git')) {
+      // TODO: check for error
       spawn.sync('git', ['clone', template, tempDir], {
         stdio: 'inherit',
         cwd: appDir,
       });
     } else {
-      // TODO: Other template types
-      throw new Error(`Invalid template source '${template}'`);
+      const npmPackage =
+        template === 'nts-template'
+          ? 'nts-template'
+          : `nts-template-${template}`;
+
+      // Check that template exists
+      const res = await fetch(`https://registry.npmjs.org/${npmPackage}`);
+      if (!res.ok) {
+        throw new Error(`Unable to find template on npm '${npmPackage}'`);
+      }
+
+      // Install it and copy it into the temp folder
+      spawn.sync('npm', ['i', npmPackage], {
+        stdio: 'inherit',
+        cwd: tempDir,
+      });
+      const npmPackageLocation = path.resolve(
+        tempDir,
+        'node_modules',
+        npmPackage,
+      );
+      fs.copySync(npmPackageLocation, tempDir);
+      fs.rmSync(path.resolve(tempDir, 'node_modules'), {
+        force: true,
+        recursive: true,
+      });
     }
 
     // Verify template
