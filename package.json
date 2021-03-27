@@ -1,6 +1,6 @@
 {
   "name": "create-nts-app",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Create Node TypeScript (nts) apps with no build configuration.",
   "author": "djdmbrwsk@gmail.com",
   "license": "MIT",
