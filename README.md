@@ -1,3 +1,7 @@
+[![build](https://img.shields.io/github/workflow/status/djdmbrwsk/create-nts-app/Lint%2C%20build%2C%20test/master)](https://github.com/djdmbrwsk/create-nts-app/actions?query=branch%3Amaster+workflow%3A%22Lint%2C+build%2C+test%22)
+&nbsp;
+[![npm](https://img.shields.io/npm/v/create-nts-app)](https://www.npmjs.com/package/create-nts-app)
+
 # create-nts-app
 
 Create Node TypeScript (nts) apps with no build configuration.
