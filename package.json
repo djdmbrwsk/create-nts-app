@@ -40,15 +40,15 @@
   "devDependencies": {
     "@djdmbrwsk/common-semantic-release": "^1.0.2",
     "@types/cross-spawn": "^6.0.2",
-    "@types/fs-extra": "^9.0.6",
-    "@types/node-fetch": "^2.5.8",
-    "@types/yargs": "^15.0.12",
+    "@types/fs-extra": "^9.0.11",
+    "@types/node-fetch": "^2.5.10",
+    "@types/yargs": "^17.0.1",
     "nts-scripts": "^3.4.0"
   },
   "dependencies": {
     "cross-spawn": "^7.0.3",
-    "fs-extra": "^9.0.1",
+    "fs-extra": "^10.0.0",
     "node-fetch": "^2.6.1",
-    "yargs": "^13.3.2"
+    "yargs": "^17.0.1"
   }
 }
