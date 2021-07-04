@@ -1,6 +1,6 @@
 module.exports = {
-  ".ts, .js": {
-    style: "module",
-    parser: "typescript",
+  '.ts, .js': {
+    style: 'module',
+    parser: 'typescript',
   },
 };

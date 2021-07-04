@@ -30,7 +30,7 @@ class Create implements CommandModule<CommonArgs, CreateArgs> {
       });
   };
   handler = async (args: Arguments<CreateArgs>): Promise<void> => {
-    const { app, template, verbose } = args;
+    const { app, template } = args;
 
     // Make app directory
     const appDir = path.resolve(app);
