@@ -35,7 +35,7 @@
     "@types/cross-spawn": "^6.0.2",
     "@types/fs-extra": "^9.0.6",
     "@types/node-fetch": "^2.5.8",
-    "@types/yargs": "^15.0.12",
+    "@types/yargs": "^17.0.1",
     "nts-scripts": "^0.0.6"
   },
   "dependencies": {
