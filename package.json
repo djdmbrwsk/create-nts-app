@@ -2,7 +2,7 @@
   "name": "create-nts-app",
   "version": "0.0.3",
   "description": "Create Node TypeScript (nts) apps with no build configuration.",
-  "author": "djdmbrwsk@gmail.com",
+  "author": "Dan Dombrowski <djdmbrwsk@gmail.com>",
   "license": "MIT",
   "keywords": [
     "node",
@@ -31,6 +31,7 @@
     "test": "nts-scripts test"
   },
   "devDependencies": {
+    "@djdmbrwsk/common-semantic-release": "^1.0.2",
     "@types/cross-spawn": "^6.0.2",
     "@types/fs-extra": "^9.0.6",
     "@types/node-fetch": "^2.5.8",
