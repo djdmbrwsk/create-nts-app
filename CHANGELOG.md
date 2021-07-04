@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/djdmbrwsk/create-nts-app/compare/v1.0.0...v1.1.0) (2021-07-04)
+
+
+### Features
+
+* Upgrade all dependencies ([acf3fa1](https://github.com/djdmbrwsk/create-nts-app/commit/acf3fa1427375a599c17bc4098bbfed5456fedb9))
+
 ## 1.0.0 (2021-07-04)
 
 
