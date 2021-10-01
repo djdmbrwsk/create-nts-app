@@ -41,7 +41,7 @@
     "@djdmbrwsk/common-semantic-release": "^1.0.2",
     "@types/cross-spawn": "^6.0.2",
     "@types/fs-extra": "^9.0.11",
-    "@types/node-fetch": "^2.5.10",
+    "@types/node-fetch": "^3.0.3",
     "@types/yargs": "^17.0.1",
     "nts-scripts": "^3.4.0"
   },
