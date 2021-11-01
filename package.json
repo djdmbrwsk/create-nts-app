@@ -38,7 +38,7 @@
     "test": "nts-scripts test"
   },
   "devDependencies": {
-    "@djdmbrwsk/common-semantic-release": "^1.0.2",
+    "@djdmbrwsk/common-semantic-release": "^2.0.0",
     "@types/cross-spawn": "^6.0.2",
     "@types/fs-extra": "^9.0.11",
     "@types/node-fetch": "^2.5.10",
